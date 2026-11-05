@@ -1,40 +1,25 @@
 
-function studentcard(props){
-  return(
-    <div>
-      <img src={props.image}/>
-      <h1>fiche etudiant</h1>
-      <p>nom & pernom :{props.prenom} {props.nom}</p>
-      <p>email :{props.email}</p>
-      <p>telephone :{props.telephone}</p>
-      <p>filiere:{props.filiere}</p>
-      <p>annee:{props.annee}</p>
-      <p>groupe :{props.groupe}</p>
-      <p>ville :{props.ville}</p>
-    </div>
-  )
-}
+function StudentCard(props) {
 
-/*function studentcard() {
-  
+  const ville = props.ville || "Non renseignée";
+
   return (
-    <div>
+    <div className="card">
+      {props.image && <img src={props.image} alt={`Photo de ${props.prenom}`} />}
 
-      <h1>Fiche etudiant</h1>
-      <img src={student.image} alt="image de l etdiant" /><br></br>
-      <strong>Nom&Prenom: </strong >{student.nom} {student.prenom} <br></br>
-      <strong>Email: </strong>{student.Email} <br></br>
-      <strong>telephone :</strong> {student.telephone}<br></br>
-      <strong>Filiere:</strong> {student. filiere}<br></br>
-      <strong>Annee d'etude:</strong>{student.anneedetude}<br></br>
-      <strong>Groupe:</strong>{student.groupe}<br></br>
-      <strong>Ville:</strong>{student.ville}<br></br>
-      <a href ="mailto=jlassimeriem149gmail.com">contacter</a>
+      <h1>Fiche étudiant</h1>
+
+      <p><strong>Nom & Prénom :</strong> {props.prenom} {props.nom}</p>
+      <p><strong>Email :</strong> {props.email}</p>
+      <p><strong>Téléphone :</strong> {props.telephone}</p>
+      <p><strong>Filière :</strong> {props.filiere}</p>
+      <p><strong>Année d'étude :</strong> {props.anneeEtude}</p>
+      <p><strong>Groupe :</strong> {props.groupe}</p>
+      <p><strong>Ville :</strong> {ville}</p>
+
+      <a className="btn" href={`mailto:${props.email}`}>Contacter</a>
     </div>
-
-
-    
-  )
+  );
 }
 
-export default App
+export default StudentCard;
