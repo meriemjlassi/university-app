@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./StudentCard.css";
+
 
 function StudentCard(props) {
   const ville = props.ville || "Non renseignée";
@@ -35,7 +35,8 @@ function StudentCard(props) {
         <button onClick={basculerCoordonnees}>
           {coordonneesVisibles ? "Masquer les coordonnées" : "Afficher les coordonnées"}
         </button>
-        <a className="btn" href={`mailto:${props.email}`}>Contacter</a>
+        <a className="btn" href={`mailto:${props.email}`}>Contacter</a> 
+        {/*  */}
         <button onClick={() => props.onModifier(props.id)}>Modifier</button>
         <button onClick={() => props.onSupprimer(props.id)}>Supprimer</button>
       </div>
